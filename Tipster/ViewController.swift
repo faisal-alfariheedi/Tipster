@@ -114,7 +114,15 @@ class ViewController: UIViewController {
     
     
     func calc(){
-        p0.text=String(tp.value)
+        p0.text="\(String((round(tp.value*100)/100)*100))%"
+        p5.text="\(String(((round(tp.value*100)/100)+5)*100))%"
+        p10.text="\(String(((round(tp.value*100)/100)+10)*100))%"
+        p0tip.text=String(tot*Double(p0.text/100))
+        p5tip.text=String(tot*Double(p5.text/100))
+        p10tip.text=String(tot*Double(p10.text/100))
+        p0tot.text=String(round(gs.value)*Double(p0tip.text)+tot)
+        p5tot.text=String(round(gs.value)*Double(p5tip.text)+tot)
+        p10tot.text=String(round(gs.value)*Double(p10tip.text)+tot)
     }
     
 }
