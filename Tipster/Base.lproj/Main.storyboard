@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -421,48 +420,45 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dD6-42-ae7">
                                 <rect key="frame" x="20" y="670" width="379" height="112"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GY8-vQ-FR8">
-                                        <rect key="frame" x="137" y="21" width="236" height="30"/>
-                                        <color key="minimumTrackTintColor" name="AccentColor"/>
-                                        <connections>
-                                            <action selector="tipslid:" destination="BYZ-38-t0r" eventType="valueChanged" id="fZ6-AG-nx8"/>
-                                        </connections>
-                                    </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="StB-zN-Fzi">
-                                        <rect key="frame" x="137" y="84" width="236" height="10.5"/>
-                                        <connections>
-                                            <action selector="groupslid:" destination="BYZ-38-t0r" eventType="valueChanged" id="gGv-fK-jR8"/>
-                                        </connections>
-                                    </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Group Size:1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0b-kN-Edx">
-                                        <rect key="frame" x="0.5" y="75.5" width="123.5" height="26.5"/>
+                                        <rect key="frame" x="0.5" y="75.5" width="119.5" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnj-90-OHs">
-                                        <rect key="frame" x="71.5" y="21" width="52.5" height="29"/>
+                                        <rect key="frame" x="67.5" y="21" width="52.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="g5M-eE-BAJ">
+                                        <rect key="frame" x="148" y="20.5" width="224" height="31"/>
+                                        <connections>
+                                            <action selector="slidetip:" destination="BYZ-38-t0r" eventType="valueChanged" id="bPc-Fg-vU6"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="2pO-FF-bTQ">
+                                        <rect key="frame" x="148" y="74" width="224" height="31"/>
+                                        <connections>
+                                            <action selector="slidegroup:" destination="BYZ-38-t0r" eventType="valueChanged" id="ETT-cl-UWy"/>
+                                        </connections>
+                                    </slider>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="2pO-FF-bTQ" firstAttribute="centerY" secondItem="R0b-kN-Edx" secondAttribute="centerY" id="1tQ-wi-qFJ"/>
                                     <constraint firstItem="jnj-90-OHs" firstAttribute="top" secondItem="dD6-42-ae7" secondAttribute="top" constant="21" id="3nA-b2-sss"/>
                                     <constraint firstAttribute="bottom" secondItem="R0b-kN-Edx" secondAttribute="bottom" constant="10" id="8zm-Dx-CtA"/>
-                                    <constraint firstAttribute="trailing" secondItem="StB-zN-Fzi" secondAttribute="trailing" constant="8" id="BrW-OM-kdQ"/>
-                                    <constraint firstItem="StB-zN-Fzi" firstAttribute="top" secondItem="GY8-vQ-FR8" secondAttribute="bottom" constant="34" id="CHf-4v-LKr"/>
-                                    <constraint firstItem="StB-zN-Fzi" firstAttribute="centerY" secondItem="R0b-kN-Edx" secondAttribute="centerY" id="Fva-rD-i4L"/>
-                                    <constraint firstItem="GY8-vQ-FR8" firstAttribute="top" secondItem="dD6-42-ae7" secondAttribute="top" constant="21" id="JsW-fA-3Ro"/>
-                                    <constraint firstItem="GY8-vQ-FR8" firstAttribute="leading" secondItem="dD6-42-ae7" secondAttribute="leading" constant="139" id="Mg5-jP-fMk"/>
+                                    <constraint firstItem="g5M-eE-BAJ" firstAttribute="leading" secondItem="jnj-90-OHs" secondAttribute="trailing" constant="30" id="A1b-uW-ih8"/>
+                                    <constraint firstAttribute="trailing" secondItem="2pO-FF-bTQ" secondAttribute="trailing" constant="9" id="J0t-aH-jD4"/>
                                     <constraint firstItem="jnj-90-OHs" firstAttribute="trailing" secondItem="R0b-kN-Edx" secondAttribute="trailing" id="PIk-V1-Nwl"/>
-                                    <constraint firstItem="StB-zN-Fzi" firstAttribute="leading" secondItem="R0b-kN-Edx" secondAttribute="trailing" constant="15" id="VlG-oi-DM4"/>
-                                    <constraint firstItem="StB-zN-Fzi" firstAttribute="leading" secondItem="dD6-42-ae7" secondAttribute="leading" constant="139" id="bEJ-rW-sgk"/>
-                                    <constraint firstAttribute="trailing" secondItem="GY8-vQ-FR8" secondAttribute="trailing" constant="8" id="iRC-Iu-5rw"/>
-                                    <constraint firstItem="StB-zN-Fzi" firstAttribute="top" secondItem="dD6-42-ae7" secondAttribute="top" constant="84" id="qaN-Lt-Xzy"/>
+                                    <constraint firstAttribute="trailing" secondItem="g5M-eE-BAJ" secondAttribute="trailing" constant="9" id="SSe-N8-4Er"/>
+                                    <constraint firstItem="2pO-FF-bTQ" firstAttribute="leading" secondItem="R0b-kN-Edx" secondAttribute="trailing" constant="30" id="cp3-oE-DXp"/>
+                                    <constraint firstItem="R0b-kN-Edx" firstAttribute="top" secondItem="jnj-90-OHs" secondAttribute="bottom" constant="25.5" id="fK1-ow-btj"/>
                                     <constraint firstItem="R0b-kN-Edx" firstAttribute="leading" secondItem="dD6-42-ae7" secondAttribute="leading" constant="0.5" id="xRl-x2-0o5"/>
                                     <constraint firstAttribute="bottom" secondItem="R0b-kN-Edx" secondAttribute="bottom" id="xvn-Hg-mBm"/>
+                                    <constraint firstItem="g5M-eE-BAJ" firstAttribute="centerY" secondItem="jnj-90-OHs" secondAttribute="centerY" id="zvc-fk-peT"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -486,7 +482,6 @@
                             <constraint firstItem="Daz-Mi-EvQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tqr-cI-Y8U"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ApT-d2-gf5" secondAttribute="bottom" constant="626" id="d31-Qa-mm1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dD6-42-ae7" secondAttribute="bottom" constant="80" id="gDd-lr-UFW"/>
-                            <constraint firstItem="Daz-Mi-EvQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gGN-Cp-DcL"/>
                             <constraint firstItem="Daz-Mi-EvQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hMc-5D-RJs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ahe-Pr-wh8" secondAttribute="trailing" constant="20" id="jil-Bw-yD4"/>
                             <constraint firstItem="ahe-Pr-wh8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kVE-iR-yFE"/>
@@ -497,7 +492,6 @@
                     </view>
                     <connections>
                         <outlet property="group" destination="R0b-kN-Edx" id="u7E-0Q-Zq1"/>
-                        <outlet property="gs" destination="StB-zN-Fzi" id="sOX-Gu-C7F"/>
                         <outlet property="p0" destination="ZsB-7l-2Qm" id="Taq-bo-k5B"/>
                         <outlet property="p0tip" destination="YzS-N2-OZ0" id="VMf-6L-IHC"/>
                         <outlet property="p0tot" destination="cAS-WT-TNw" id="jzT-zQ-BjT"/>
@@ -508,7 +502,6 @@
                         <outlet property="p5tip" destination="beE-1W-Zdp" id="8Yb-nE-zLP"/>
                         <outlet property="p5tot" destination="j0l-jM-6dG" id="EzO-ob-K1l"/>
                         <outlet property="ptot" destination="ahe-Pr-wh8" id="2Yd-hb-0cM"/>
-                        <outlet property="tp" destination="StB-zN-Fzi" id="f3m-bX-9b6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -517,9 +510,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
